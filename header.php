@@ -3,6 +3,8 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyễn Ngọc Hùng – Frontend Developer</title>
+  <link rel="icon" type="image/jpeg" href="<?php echo get_template_directory_uri(); ?>/images/logo.jpg">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -10,6 +12,7 @@
 
 <!-- ── SIDEBAR ── -->
 <div class="sidebar">
+
   <a href="<?php echo home_url(); ?>" class="logo">NNH</a>
 
   <?php echo do_shortcode('[wp_dark_mode]'); ?>
@@ -48,6 +51,7 @@
     </svg>
     <span class="tip">Contact</span>
   </a>
+
 </div><!-- /.sidebar -->
 
 <main>

@@ -66,14 +66,14 @@ body {
   font-weight: 700;
   color: var(--b500);
   margin-bottom: 1.8rem;
-  letter-spacing: 1px;
-}
+  letter-spacing: 1px;}
 .logo {
     text-decoration: none;
     color: black;
     font-weight: bold;
     font-size: 24px;
 }
+
 
 .nav-dot {
   width: 44px;
@@ -1130,12 +1130,208 @@ h1.name em {
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(36, 114, 170, .3);
 }
+/* ── BANNER SECTION ── */
+.banner-section {
+  min-height: unset;
+  padding: 3rem 5rem;
+  background: var(--soft);
+  display: block;
+  align-items: unset;
+}
+
+.cpp-banner {
+  background: #0C447C;
+  border-radius: 20px;
+  padding: 2.8rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2.5rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Deco circles */
+.cpp-deco {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.cpp-deco1 { width:280px;height:280px;background:#185FA5;top:-80px;right:210px;opacity:.45; }
+.cpp-deco2 { width:180px;height:180px;background:#378ADD;bottom:-60px;right:70px;opacity:.35; }
+.cpp-deco3 { width:90px;height:90px;background:#85B7EB;top:20px;right:340px;opacity:.2; }
+
+/* Badge */
+.cpp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #85B7EB;
+  color: #042C53;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 1.1rem;
+}
+.cpp-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0C447C;
+  flex-shrink: 0;
+}
+
+/* Title */
+.cpp-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  color: #E6F1FB;
+  line-height: 1.2;
+  margin-bottom: 0.7rem;
+}
+.cpp-title span { color: #FAC775; }
+
+/* Sub */
+.cpp-sub {
+  font-size: 0.88rem;
+  color: #85B7EB;
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 1.3rem;
+}
+
+/* Features */
+.cpp-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.4rem;
+  margin-bottom: 1.5rem;
+}
+.cpp-feat {
+  font-size: 0.8rem;
+  color: #B5D4F4;
+}
+
+/* CTA */
+.cpp-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+.cpp-btn-main {
+  padding: 0.65rem 1.6rem;
+  background: #FAC775;
+  color: #412402;
+  border-radius: 50px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.cpp-btn-main:hover {
+  background: #EF9F27;
+  transform: translateY(-2px);
+}
+.cpp-btn-ghost {
+  padding: 0.65rem 1.4rem;
+  background: transparent;
+  color: #85B7EB;
+  border: 1px solid #185FA5;
+  border-radius: 50px;
+  font-size: 0.86rem;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.cpp-btn-ghost:hover {
+  border-color: #85B7EB;
+  color: #B5D4F4;
+  transform: translateY(-2px);
+}
+.cpp-free {
+  font-size: 0.78rem;
+  color: #5DCAA5;
+}
+
+/* Right panel */
+.cpp-right {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* Code card */
+.cpp-code-card {
+  background: #042C53;
+  border: 1px solid #85B7EB;
+  border-radius: 13px;
+  padding: 1.1rem 1.3rem;
+  min-width: 200px;
+}
+.cpp-code-dots {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 0.8rem;
+}
+.cd-r,.cd-y,.cd-g {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.cd-r { background: #E24B4A; }
+.cd-y { background: #EF9F27; }
+.cd-g { background: #639922; }
+
+.cpp-code-body {
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+.cpp-code-body .mt4 { margin-top: 4px; }
+.cpp-code-body .pl  { padding-left: 14px; }
+.ck { color: #AFA9EC; }
+.cf { color: #5DCAA5; }
+.cs { color: #FAC775; }
+.cm { color: #5F5E5A; }
+.ct { color: #B5D4F4; }
+.cn { color: #EF9F27; }
+
+/* Students badge */
+.cpp-students {
+  background: #1D9E75;
+  color: #E1F5EE;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .banner-section { padding: 2rem 1.8rem; }
+  .cpp-banner {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.6rem;
+  }
+  .cpp-right { align-items: flex-start; }
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
   .sidebar { display: none; }
   main, .site-footer { margin-left: 0; }
   section { padding: 3rem 1.8rem; }
+
   #home { grid-template-columns: 1fr; }
   .hero-right {
     display: flex !important;
@@ -1143,9 +1339,24 @@ h1.name em {
     width: 100%;
     margin-top: 1rem;
   }
+
   .bento { grid-template-columns: 1fr; }
   .bento-card.wide { grid-column: span 1; }
+
   .proj-grid { grid-template-columns: 1fr; }
+
   .contact-wrap { grid-template-columns: 1fr; }
   .frow { grid-template-columns: 1fr; }
+
+  /* Banner responsive */
+  .banner-section { padding: 2rem 1.8rem; }
+  .cpp-banner {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.6rem;
+  }
+  .cpp-right { align-items: flex-start; }
+  .cpp-code-card { min-width: unset; width: 100%; }
+  .cpp-title { font-size: 1.5rem; }
+  .cpp-cta { flex-direction: column; align-items: flex-start; }
+  .cpp-btn-main, .cpp-btn-ghost { width: 100%; text-align: center; }
 }
