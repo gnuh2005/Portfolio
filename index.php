@@ -112,7 +112,7 @@ $initials = mb_substr( $initials, 0, 3 );
       <h3>Kỹ năng lập trình &amp; Công cụ</h3>
       <div class="chip-wrap">
         <?php
-        $skills = [ 'HTML5', 'CSS3', 'JavaScript', 'Git', 'GitHub', 'Responsive Design', 'WordPress', 'VSCode' ];
+        $skills = [ 'HTML5', 'CSS3', 'JavaScript', 'React', 'TypeScript', 'Node.js', 'Python', 'MongoDB', 'TensorFlow', 'OpenCV', 'Flask', 'Git', 'GitHub', 'Responsive Design', 'WordPress', 'VSCode' ];
         foreach ( $skills as $skill ) {
             echo '<span class="chip">' . esc_html( $skill ) . '</span>';
         }
@@ -169,19 +169,17 @@ $initials = mb_substr( $initials, 0, 3 );
     $projects = [
   [
     'img'   => get_template_directory_uri() . '/images/project1.jpg',
-    'chips' => [ 'HTML', 'CSS', 'JS', 'Game Design', 'PHP' ],
-    'name'  => 'Environment Game',
-    'desc'  => 'Dự án xây dựng một mini game giáo dục nhằm nâng cao ý thức bảo vệ môi trường cho người chơi thông qua các hoạt động tương tác như phân loại rác, thu gom rác thải và xử lý ô nhiễm.',
-    'link'  => 'https://github.com/gnuh2005/environment-game',
+    'chips' => [ 'React', 'Node.js', 'MongoDB', 'AI' ],
+    'name'  => 'TaskFlow AI',
+    'desc'  => 'TaskFlow AI là một ứng dụng quản lý tác vụ hiện đại được xây dựng trên stack MERN và tích hợp với các tính năng AI. Người dùng có thể tạo, quản lý, lọc và ưu tiên công việc thông qua giao diện bảng điều khiển sạch. Hệ thống bao gồm xác thực JWT, hỗ trợ tác vụ thông minh từ AI, bảng điều khiển phân tích, quản lý tác vụ kéo-thả, và giao diện phản ứng.',
+    'link'  => 'https://github.com/thiendeptrai29/taskflow-ai',
   ],
   [
     'img'   => get_template_directory_uri() . '/images/project2.jpg',
-    'chips' => [ 'C++', 'Game 2D' ],
-    'name'  => 'Running Man',
-    'desc'  => 'Dự án xây dựng một trò chơi dạng endless runner (chạy vô tận) lấy cảm hứng từ mini game khi mất mạng trên trình duyệt Chrome Dino của Google. Trong game, người chơi điều khiển nhân vật chạy liên tục và phải né các chướng ngại vật bằng cách nhảy hoặc cúi xuống.
-
-Game được thiết kế nhằm rèn luyện phản xạ nhanh, tăng độ tập trung và mang tính giải trí cao với cơ chế tăng tốc độ theo thời gian.',
-    'link'  => 'https://github.com/gnuh2005/runningman',
+    'chips' => [ 'Python', 'TensorFlow', 'OpenCV', 'CNN' ],
+    'name'  => 'Handwritten Character Recognition System',
+    'desc'  => 'Dự án sử dụng Mạng Lưới Thần Kinh Tích Chập (CNN) để nhận dạng các chữ số viết tay và ký tự chữ hoa từ hình ảnh được tải lên trong thời gian thực. Hệ thống bao gồm xử lý hình ảnh tiên tiến, giảm nhiễu, phát hiện đường viền, phân đoạn ký tự, và dự đoán học sâu với độ chính xác cao.',
+    'link'  => 'https://github.com/handwritten-recognition/handwritten-recognition',
   ],
   [
     'img'   => get_template_directory_uri() . '/images/project3.jpg',

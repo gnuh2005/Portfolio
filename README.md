@@ -82,8 +82,8 @@ cp -r portfolio-theme /path/to/wordpress/wp-content/themes/
 
 | Dự án | Công nghệ | Mô tả |
 |---|---|---|
-| **Environment Game** | HTML, CSS, JS, PHP | Mini game giáo dục phân loại rác |
-| **Running Man** | C++, Game 2D | Endless runner lấy cảm hứng Chrome Dino |
+| **TaskFlow AI** | React, Node.js, MongoDB, AI | Ứng dụng quản lý tác vụ được hỗ trợ bởi AI |
+| **Handwritten Character Recognition System** | Python, TensorFlow, OpenCV, CNN | Hệ thống nhận dạng ký tự viết tay sử dụng CNN |
 | **Snake Game** | C++, SDL2.0 | Snake game 2 player vs AI |
 
 ---
