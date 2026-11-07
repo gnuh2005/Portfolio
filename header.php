@@ -3,7 +3,7 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nguyễn Ngọc Hùng – Frontend Developer</title>
+  <title>Nguyễn Ngọc Hùng – Full Stack Developer</title>
   <link rel="icon" type="image/jpeg" href="<?php echo get_template_directory_uri(); ?>/images/logo.jpg">
   <?php wp_head(); ?>
 </head>
@@ -15,7 +15,7 @@
 
   <a href="<?php echo home_url(); ?>" class="logo">NNH</a>
 
-  <?php echo do_shortcode('[wp_dark_mode]'); ?>
+  <!-- wp_dark_mode plugin removed - causing regex error -->
 
   <a href="#home" class="nav-dot active">
     <svg viewBox="0 0 24 24">

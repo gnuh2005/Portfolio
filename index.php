@@ -4,22 +4,19 @@
  */
 get_header();
 
-// Lấy thông tin từ Customizer (có fallback mặc định)
 $hero_name = get_theme_mod( 'nnh_hero_name', 'Nguyễn Ngọc Hùng' );
-$hero_role = get_theme_mod( 'nnh_hero_role', 'Frontend Developer' );
-$hero_bio  = get_theme_mod( 'nnh_hero_bio',  'Sinh viên Công nghệ Thông tin tại Trường Đại học Tây Nguyên. Đam mê xây dựng giao diện web đẹp, thân thiện và có trải nghiệm người dùng tốt.' );
+$hero_role = 'Full Stack Developer';
+$hero_bio  = 'Full Stack Developer, xây dựng ứng dụng web từ giao diện đến backend và cơ sở dữ liệu. Mình yêu thích biến ý tưởng thành sản phẩm hữu ích, dễ dùng và đáng tin cậy.';
 
 $email    = get_theme_mod( 'nnh_email',    'nnh08072005@gmail.com' );
 $github   = get_theme_mod( 'nnh_github',   'https://github.com/gnuh2005' );
 $facebook = get_theme_mod( 'nnh_facebook', 'https://www.facebook.com/gnuh.2005/' );
 $address  = get_theme_mod( 'nnh_address',  '245 Trần Nhân Tông,Thành Phố Buôn Ma Thuột, Đắk Lắk' );
 
-// Tách tên thành phần: "Nguyễn Ngọc Hùng" → "Nguyễn Ngọc" + "Hùng"
 $name_parts = explode( ' ', trim( $hero_name ) );
 $last_name  = array_pop( $name_parts );
 $first_part = implode( ' ', $name_parts );
 
-// Tạo chữ viết tắt avatar (lấy chữ cái đầu mỗi từ, tối đa 3)
 $initials = '';
 foreach ( explode( ' ', $hero_name ) as $w ) {
     $initials .= mb_strtoupper( mb_substr( $w, 0, 1 ) );
@@ -37,28 +34,18 @@ $initials = mb_substr( $initials, 0, 3 );
 
   <div class="hero-left">
     <div class="hero-tag">
-  <span class="dot"></span>
-
-  <svg width="16" height="16" viewBox="0 0 24 24"
-       fill="none" stroke="currentColor"
-       stroke-width="2"
-       style="margin-right:6px; vertical-align:middle;">
-    <path d="M3 5h18v12H3z"/>
-    <path d="M8 21h8"/>
-  </svg>
-
-  <?php echo esc_html( $hero_role ); ?>
-</div>
+      <span class="dot"></span>
+      <svg width="16" height="16" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2"
+           style="margin-right:6px; vertical-align:middle;">
+        <path d="M3 5h18v12H3z"/>
+        <path d="M8 21h8"/>
+      </svg>
+      <?php echo esc_html( $hero_role ); ?>
+    </div>
 
     <h1 class="name">
       <?php echo esc_html( $first_part ); ?><br>
-      <?php
-        // Hiển thị tất cả trừ từ cuối, từ cuối in nghiêng màu xanh
-        if ( $first_part ) {
-            // Từ cuối cùng đã được tách ở trên ($last_name)
-        }
-      ?>
-      <?php echo esc_html( implode( ' ', array_slice( explode( ' ', $hero_name ), count( $name_parts ) - 0, -1 ) ) ); ?>
       <em><?php echo esc_html( $last_name ); ?></em>
     </h1>
 
@@ -73,9 +60,9 @@ $initials = mb_substr( $initials, 0, 3 );
   <div class="hero-right">
     <div class="avatar-card">
       <div class="avatar-ring">
-         <img src="<?php echo get_template_directory_uri(); ?>/images/avatar.jpg"alt="Avatar"
-    class="avatar-img">
-        </div>
+        <img src="<?php echo get_template_directory_uri(); ?>/images/avatar.jpg"
+             alt="Avatar" class="avatar-img">
+      </div>
       <div class="aname"><?php echo esc_html( $hero_name ); ?></div>
       <div class="arole"><?php echo esc_html( $hero_role ); ?></div>
     </div>
@@ -99,7 +86,6 @@ $initials = mb_substr( $initials, 0, 3 );
 
   <div class="bento">
 
-    <!-- Học vấn -->
     <div class="bento-card fi">
       <h3>Học vấn</h3>
       <div class="edu-school">Đại học Tây Nguyên</div>
@@ -107,7 +93,6 @@ $initials = mb_substr( $initials, 0, 3 );
       <span class="edu-pill">2022 – Hiện tại</span>
     </div>
 
-    <!-- Kỹ năng lập trình -->
     <div class="bento-card wide fi">
       <h3>Kỹ năng lập trình &amp; Công cụ</h3>
       <div class="chip-wrap">
@@ -120,17 +105,15 @@ $initials = mb_substr( $initials, 0, 3 );
       </div>
     </div>
 
-    <!-- Định hướng nghề nghiệp -->
     <div class="bento-card fi">
       <h3>Định hướng nghề nghiệp</h3>
       <ul class="goal-list">
-        <li>Frontend Developer – xây dựng UI/UX chất lượng cao</li>
-        <li>Làm chủ React / Vue.js trong tương lai gần</li>
-        <li>Hướng tới Full Stack Developer dài hạn</li>
+        <li>Phát triển ứng dụng web từ giao diện đến backend</li>
+        <li>Xây dựng API, tích hợp cơ sở dữ liệu và xử lý nghiệp vụ</li>
+        <li>Liên tục cải thiện chất lượng, hiệu năng và trải nghiệm sản phẩm</li>
       </ul>
     </div>
 
-    <!-- Kỹ năng mềm -->
     <div class="bento-card fi">
       <h3>Kỹ năng mềm</h3>
       <div class="chip-wrap">
@@ -143,7 +126,6 @@ $initials = mb_substr( $initials, 0, 3 );
       </div>
     </div>
 
-    <!-- Ngôn ngữ -->
     <div class="bento-card fi">
       <h3>Ngôn ngữ</h3>
       <div class="chip-wrap">
@@ -165,62 +147,103 @@ $initials = mb_substr( $initials, 0, 3 );
 
   <div class="proj-grid">
     <?php
-    // Dữ liệu các dự án – bạn có thể chuyển sang Custom Post Type sau
     $projects = [
-  [
-    'img'   => get_template_directory_uri() . '/images/project1.jpg',
-    'chips' => [ 'React', 'Node.js', 'MongoDB', 'AI' ],
-    'name'  => 'TaskFlow AI',
-    'desc'  => 'TaskFlow AI là một ứng dụng quản lý tác vụ hiện đại được xây dựng trên stack MERN và tích hợp với các tính năng AI. Người dùng có thể tạo, quản lý, lọc và ưu tiên công việc thông qua giao diện bảng điều khiển sạch. Hệ thống bao gồm xác thực JWT, hỗ trợ tác vụ thông minh từ AI, bảng điều khiển phân tích, quản lý tác vụ kéo-thả, và giao diện phản ứng.',
-    'link'  => 'https://github.com/thiendeptrai29/taskflow-ai',
-  ],
-  [
-    'img'   => get_template_directory_uri() . '/images/project2.jpg',
-    'chips' => [ 'Python', 'TensorFlow', 'OpenCV', 'CNN' ],
-    'name'  => 'Handwritten Character Recognition System',
-    'desc'  => 'Dự án sử dụng Mạng Lưới Thần Kinh Tích Chập (CNN) để nhận dạng các chữ số viết tay và ký tự chữ hoa từ hình ảnh được tải lên trong thời gian thực. Hệ thống bao gồm xử lý hình ảnh tiên tiến, giảm nhiễu, phát hiện đường viền, phân đoạn ký tự, và dự đoán học sâu với độ chính xác cao.',
-    'link'  => 'https://github.com/handwritten-recognition/handwritten-recognition',
-  ],
-  [
-    'img'   => get_template_directory_uri() . '/images/project3.jpg',
-    'chips' => [ 'C++', 'SDL2.0' ],
-    'name'  => 'Snake Game',
-    'desc'  => 'Dự án xây dựng trò chơi rắn săn mồi cổ điển, lấy cảm hứng từ game Snake. Trong game, người chơi điều khiển con rắn di chuyển trên màn hình để ăn thức ăn và tăng chiều dài. Trò chơi kết thúc khi rắn va chạm với tường hoặc chính cơ thể của mình.',
-    'link'  => 'https://github.com/gnuh2005/Snake-Game',
-  ],
-];
+      [
+        'img'   => get_template_directory_uri() . '/images/project3.jpg',
+        'chips' => [ 'Expo', 'React Native', 'TypeScript', 'Node.js', 'Express', 'MongoDB' ],
+        'name'  => 'Smart Campus',
+        'desc'  => 'Ứng dụng đồng hành cùng sinh viên Đại học Tây Nguyên: tra cứu thông tin học tập, khám phá bản đồ khuôn viên, xem lịch học và nhận thông báo. Dự án gồm ứng dụng đa nền tảng Expo/React Native và API Node.js/Express; một số luồng hiện sử dụng dữ liệu mẫu.',
+        'link'  => 'https://github.com/QngDuc/SmartCampus',
+      ],
+      [
+        'img'   => get_template_directory_uri() . '/images/project1.jpg',
+        'chips' => [ 'React', 'Node.js', 'MongoDB', 'AI' ],
+        'name'  => 'TaskFlow AI',
+        'desc'  => 'TaskFlow AI là một ứng dụng quản lý tác vụ hiện đại được xây dựng trên stack MERN và tích hợp với các tính năng AI. Người dùng có thể tạo, quản lý, lọc và ưu tiên công việc thông qua giao diện bảng điều khiển sạch. Hệ thống bao gồm xác thực JWT, hỗ trợ tác vụ thông minh từ AI, bảng điều khiển phân tích, quản lý tác vụ kéo-thả, và giao diện phản ứng.',
+        'link'  => 'https://github.com/thiendeptrai29/taskflow-ai',
+        'web'   => 'https://taskflow-ai-wheat.vercel.app/',
+      ],
+
+      [
+        'img'   => get_template_directory_uri() . '/images/project2.jpg',
+        'chips' => [ 'Python', 'TensorFlow', 'OpenCV', 'CNN' ],
+        'name'  => 'Handwritten Character Recognition System',
+        'desc'  => 'Dự án sử dụng Mạng Lưới Thần Kinh Tích Chập (CNN) để nhận dạng các chữ số viết tay và ký tự chữ hoa từ hình ảnh được tải lên trong thời gian thực. Hệ thống bao gồm xử lý hình ảnh tiên tiến, giảm nhiễu, phát hiện đường viền, phân đoạn ký tự, và dự đoán học sâu với độ chính xác cao.',
+        'link'  => 'https://github.com/handwritten-recognition/handwritten-recognition',
+      ],
+
+    ];
 
     foreach ( $projects as $proj ) : ?>
+
     <div class="proj-card fi">
+
       <div class="proj-thumb">
-  <?php if ( ! empty( $proj['img'] ) ) : ?>
-    <img
-      src="<?php echo esc_url( $proj['img'] ); ?>"
-      alt="<?php echo esc_attr( $proj['name'] ); ?>"
-      class="proj-thumb-img"
-      loading="lazy"
-    >
-  <?php else : ?>
-    <span style="font-size:3rem;">🌐</span>
-  <?php endif; ?>
-</div>
+        <?php if ( ! empty( $proj['img'] ) ) : ?>
+
+          <img
+            src="<?php echo esc_url( $proj['img'] ); ?>"
+            alt="<?php echo esc_attr( $proj['name'] ); ?>"
+            class="proj-thumb-img"
+            loading="lazy"
+          >
+
+        <?php else : ?>
+
+          <span style="font-size:3rem;">🌐</span>
+
+        <?php endif; ?>
+      </div>
+
       <div class="proj-body">
+
         <div class="proj-chips">
           <?php foreach ( $proj['chips'] as $chip ) : ?>
-            <span class="proj-chip"><?php echo esc_html( $chip ); ?></span>
+            <span class="proj-chip">
+              <?php echo esc_html( $chip ); ?>
+            </span>
           <?php endforeach; ?>
         </div>
-        <h3 class="proj-name"><?php echo esc_html( $proj['name'] ); ?></h3>
-        <p class="proj-desc"><?php echo esc_html( $proj['desc'] ); ?></p>
-        <a href="<?php echo esc_url( $proj['link'] ); ?>" class="proj-link" target="_blank" rel="noopener">
-          &#128279; Xem GitHub
-        </a>
+
+        <h3 class="proj-name">
+          <?php echo esc_html( $proj['name'] ); ?>
+        </h3>
+
+        <p class="proj-desc">
+          <?php echo esc_html( $proj['desc'] ); ?>
+        </p>
+
+        <!-- ACTION BUTTONS -->
+        <div class="proj-actions">
+
+          <a
+            href="<?php echo esc_url( $proj['link'] ); ?>"
+            class="proj-link"
+            target="_blank"
+            rel="noopener"
+          >
+            🔗 Xem GitHub
+          </a>
+
+          <?php if ( ! empty( $proj['web'] ) ) : ?>
+            <a
+              href="<?php echo esc_url( $proj['web'] ); ?>"
+              class="proj-link proj-web"
+              target="_blank"
+              rel="noopener"
+            >
+              🌐 Xem Web
+            </a>
+          <?php endif; ?>
+
+        </div>
+
       </div>
     </div>
+
     <?php endforeach; ?>
   </div><!-- /.proj-grid -->
 </section>
-
 
 <!-- ════════════════════════════════════════════
      04 · CONTACT
@@ -231,7 +254,6 @@ $initials = mb_substr( $initials, 0, 3 );
 
   <div class="contact-wrap">
 
-    <!-- Cột trái: thông tin -->
     <div class="contact-left fi">
       <p>Mình luôn sẵn sàng lắng nghe những cơ hội hợp tác, thực tập hoặc dự án thú vị. Hãy nhắn tin cho mình nhé!</p>
 
@@ -266,37 +288,38 @@ $initials = mb_substr( $initials, 0, 3 );
       </div>
 
       <div class="socials">
-        <div class="socials">
-  <a href="<?php echo esc_url( $github ); ?>" class="soc" target="_blank" rel="noopener">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:5px">
-      <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-    </svg>
-    GitHub
-  </a>
-  <a href="<?php echo esc_url( $facebook ); ?>" class="soc" target="_blank" rel="noopener">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:5px">
-      <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-    </svg>
-    Facebook
-  </a>
-</div>
+        <a href="<?php echo esc_url( $github ); ?>" class="soc" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
+               style="vertical-align:middle;margin-right:5px">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="<?php echo esc_url( $facebook ); ?>" class="soc" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
+               style="vertical-align:middle;margin-right:5px">
+            <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+          </svg>
+          Facebook
+        </a>
       </div>
 
       <div class="map-wrap">
         <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3893.067537311874!2d108.000914!3d12.643574099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31721dd4abef9ced%3A0x611aa9ee7b2ea734!2zMjQ1IFRy4bqnbiBOaMOibiBUw7RuZywgS2jDoW5oIFh1w6JuLCBUaMOgbmggTmjhuqV0LCDEkOG6r2sgTOG6r2ssIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1775822473209!5m2!1svi!2s"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Bản đồ Buôn Ma Thuột"
-></iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3893.067537311874!2d108.000914!3d12.643574099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31721dd4abef9ced%3A0x611aa9ee7b2ea734!2zMjQ1IFRy4bqnbiBOaMOibiBUw7RuZywgS2jDoW5oIFh1w6JuLCBUaMOgbmggTmjhuqV0LCDEkOG6r2sgTOG6r2ssIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1775822473209!5m2!1svi!2s"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Bản đồ Buôn Ma Thuột">
+        </iframe>
       </div>
     </div><!-- /.contact-left -->
 
     <!-- Cột phải: form liên hệ -->
     <div class="fi">
-      <form class="cform" id="contactForm" novalidate>
-        <?php wp_nonce_field( 'nnh_contact_nonce', 'nnh_nonce' ); ?>
+      <form class="cform" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="1988ffb1-686e-4d6c-8bc6-e85e95cf6d1a">
+        <input type="hidden" name="from_name" value="Portfolio Nguyễn Ngọc Hùng">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
 
         <div class="frow">
           <div class="fg">
@@ -316,7 +339,8 @@ $initials = mb_substr( $initials, 0, 3 );
 
         <div class="fg">
           <label for="fm">Nội dung</label>
-          <textarea id="fm" name="message" rows="5" placeholder="Nội dung tin nhắn..." required></textarea>
+          <textarea id="fm" name="message" rows="5"
+                    placeholder="Nội dung tin nhắn..." required></textarea>
         </div>
 
         <button type="submit" class="fsend">Gửi tin nhắn &#10148;</button>
@@ -328,6 +352,8 @@ $initials = mb_substr( $initials, 0, 3 );
 
   </div><!-- /.contact-wrap -->
 </section>
+
+
 <!-- ════════════════════════════════════════════
      05 · BANNER QUẢNG CÁO
 ═════════════════════════════════════════════ -->
@@ -353,7 +379,8 @@ $initials = mb_substr( $initials, 0, 3 );
       </div>
       <div class="cpp-cta">
         <a href="https://www.facebook.com/gnuh.2005/" class="cpp-btn-main">Đăng ký ngay</a>
-        <a href="https://topdev.vn/blog/lap-trinh-c-co-ban/?utm_source=google&utm_medium=cpc&gad_source=1&gad_campaignid=23072489947&gbraid=0AAAAADDtBSDn8ViKMlsPWxqmERYMHaSg4&gclid=Cj0KCQjwqPLOBhCiARIsAKRMPZoqbVC2ms9kQS_wm6yPaauqJ9GCVErogq7Hr4zfoNGz8B1jQj_m9BwaAl3SEALw_wcB" class="cpp-btn-ghost">Xem chương trình</a>
+        <a href="https://topdev.vn/blog/lap-trinh-c-co-ban/?utm_source=google&utm_medium=cpc&gad_source=1&gad_campaignid=23072489947&gbraid=0AAAAADDtBSDn8ViKMlsPWxqmERYMHaSg4&gclid=Cj0KCQjwqPLOBhCiARIsAKRMPZoqbVC2ms9kQS_wm6yPaauqJ9GCVErogq7Hr4zfoNGz8B1jQj_m9BwaAl3SEALw_wcB"
+           class="cpp-btn-ghost">Xem chương trình</a>
         <span class="cpp-free">✦ Miễn phí tuần đầu</span>
       </div>
     </div>
@@ -380,4 +407,5 @@ $initials = mb_substr( $initials, 0, 3 );
 
   </div>
 </section>
+
 <?php get_footer(); ?>

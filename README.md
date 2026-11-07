@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Portfolio Banner](https://img.shields.io/badge/Portfolio-Frontend%20Developer-3a8fcc?style=for-the-badge&logo=wordpress&logoColor=white)
+![Portfolio Banner](https://img.shields.io/badge/Portfolio-Full%20Stack%20Developer-456bb5?style=for-the-badge&logo=wordpress&logoColor=white)
 ![WordPress](https://img.shields.io/badge/WordPress-Custom%20Theme-21759b?style=for-the-badge&logo=wordpress&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-8.0+-777bb4?style=for-the-badge&logo=php&logoColor=white)
 
@@ -14,7 +14,7 @@
 
 ## 👤 Giới thiệu
 
-Portfolio cá nhân của **Nguyễn Ngọc Hùng** – sinh viên Công nghệ Thông tin tại Trường Đại học Tây Nguyên. WordPress custom theme được xây dựng hoàn toàn từ đầu (no page builder), tập trung vào giao diện đẹp, hiệu ứng mượt mà và trải nghiệm người dùng tốt.
+Portfolio cá nhân của **Nguyễn Ngọc Hùng** – Full Stack Developer, sinh viên Công nghệ Thông tin tại Trường Đại học Tây Nguyên. WordPress custom theme được xây dựng từ đầu để giới thiệu kỹ năng, dự án và kinh nghiệm phát triển ứng dụng web từ frontend đến backend.
 
 ---
 
@@ -76,15 +76,31 @@ cp -r portfolio-theme /path/to/wordpress/wp-content/themes/
 # Appearance → Themes → Activate "Nguyễn Ngọc Hùng Portfolio"
 ```
 
+### Cập nhật theme trên website đang chạy
+
+1. Commit và push thay đổi lên GitHub:
+
+   ```bash
+   git add index.php header.php style.css README.md
+   git commit -m "Update portfolio role to Full Stack Developer"
+   git push origin main
+   ```
+
+2. Nếu hosting có kết nối GitHub tự deploy, kiểm tra build/deploy hoàn tất. Theme WordPress này không cần bước build riêng.
+3. Nếu hosting không tự deploy, dùng File Manager hoặc FTP để cập nhật `index.php` trong `wp-content/themes/portfolio-theme/` (đường dẫn thư mục có thể khác theo hosting). Sao lưu trước khi ghi đè.
+4. Mở trang portfolio, xóa cache của plugin/CDN nếu có, rồi tải lại cứng trình duyệt (`Ctrl+F5`) để kiểm tra dự án Smart Campus.
+
+Chỉ cần cập nhật theme portfolio để hiện thẻ dự án và liên kết GitHub. Muốn triển khai chính ứng dụng SmartCampus thì cần deploy riêng frontend Expo và backend API; cấu hình `localhost` trong ứng dụng sẽ không dùng được trên website công khai. Xem hướng dẫn và cấu hình trong [README của SmartCampus](https://github.com/QngDuc/SmartCampus#readme).
+
 ---
 
 ## 🎮 Dự án nổi bật
 
 | Dự án | Công nghệ | Mô tả |
 |---|---|---|
+| **Smart Campus** | Expo, React Native, TypeScript, Node.js, Express, MongoDB | Ứng dụng hỗ trợ sinh viên Đại học Tây Nguyên tra cứu học tập, lịch học, thông báo và khám phá khuôn viên |
 | **TaskFlow AI** | React, Node.js, MongoDB, AI | Ứng dụng quản lý tác vụ được hỗ trợ bởi AI |
 | **Handwritten Character Recognition System** | Python, TensorFlow, OpenCV, CNN | Hệ thống nhận dạng ký tự viết tay sử dụng CNN |
-| **Snake Game** | C++, SDL2.0 | Snake game 2 player vs AI |
 
 ---
 
